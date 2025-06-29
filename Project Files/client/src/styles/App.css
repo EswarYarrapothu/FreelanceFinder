@@ -1,0 +1,566 @@
+/* client/src/App.css - Consolidated and Optimized Styles */
+
+/* General Body and HTML Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif; /* Using Inter font as default */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f0f2f5; /* Light grey background for the whole page */
+    color: #333; /* Default text color */
+}
+
+/* Base Link Styling */
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color by default */
+}
+
+/* App Container (Main layout for the entire application) */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f2f5; /* Background for the overall app */
+}
+
+/* Navbar/Header Styling */
+.navbar {
+    background-color: #4CAF50; /* Green background */
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+
+.navbar-brand {
+    margin: 0;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.navbar-brand a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 25px; /* Space between nav items */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e0e0e0; /* Lighter on hover */
+}
+
+/* Specific style for the Login/Register button in navbar */
+.nav-login-btn {
+    background-color: #388E3C; /* Darker green */
+    color: white;
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.nav-login-btn:hover {
+    background-color: #2E7D32; /* Even darker on hover */
+}
+
+/* Main Content Area (below navbar, above footer) */
+.main-content {
+    flex-grow: 1;
+    padding-top: 20px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Dark grey */
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Pushes footer to the bottom */
+    font-size: 0.9em;
+}
+
+/* Landing Page Specific Styles */
+.landing-page-container {
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    text-align: center;
+}
+
+.hero-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-title {
+    font-size: 2.8em;
+    color: #4CAF50;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.backend-status-card {
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    background-color: #f9f9f9;
+}
+
+.status-title {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.status-message {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.status-info {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.cta-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Authentication Forms (Login/Register) Styles */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 180px); /* Adjust to fit within screen */
+    padding: 40px 20px;
+    background-color: #f8fbfd;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    background-color: white;
+}
+
+.auth-title {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.95em;
+    color: #555;
+    font-weight: 500;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form select { 
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.auth-form input:focus,
+.auth-form select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+  background-color: #4CAF50; 
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #388E3C; 
+}
+
+.btn-secondary {
+  background-color: #6c757d; 
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+
+.auth-message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.auth-message.success {
+    background-color: #e6ffe6;
+    color: #28a745;
+    border: 1px solid #28a745;
+}
+
+.auth-message.error {
+    background-color: #ffe6e6;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+.auth-switch-text {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.auth-switch-link {
+    color: #4CAF50;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.auth-switch-link:hover {
+    color: #388E3C;
+    text-decoration: underline;
+}
+
+/* Dashboard Layout (Generic for Admin, Client, Freelancer) - RESTORED ORIGINAL */
+.dashboard-container {
+    display: flex;
+    min-height: calc(100vh - 80px); /* Adjust as per your header height */
+    background-color: #f8fbfd; /* Background for the main dashboard content area */
+    padding-top: 0; /* No padding on container itself */
+}
+
+.dashboard-sidebar {
+    width: 250px;
+    background-color: #ffffff; /* White background for sidebar */
+    padding: 25px 0; /* Vertical padding, no horizontal */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05); /* Light shadow on the right */
+    border-right: 1px solid #eee; /* Light border on the right */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    overflow-y: auto; /* For scrollable sidebar if content is long */
+}
+
+.sidebar-heading {
+    font-size: 1.3em;
+    color: #4CAF50; /* Green heading */
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.sidebar-nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%; /* Take full width of sidebar */
+}
+
+.sidebar-nav-item {
+    width: 100%;
+    margin-bottom: 5px; /* Spacing between nav items */
+}
+
+.sidebar-nav-item a {
+    display: block;
+    padding: 12px 25px; /* Ample padding for links */
+    color: #555; /* Default text color for links */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 5px solid transparent; /* This creates the active bar effect */
+}
+
+.sidebar-nav-item a:hover {
+    background-color: #e9f5e9; /* Light green on hover */
+    color: #388E3C; /* Darker green text on hover */
+    border-left-color: #4CAF50; /* Green bar on hover */
+}
+
+.sidebar-nav-item a.active {
+    background-color: #dcf7dc; /* Lighter green for active state */
+    color: #4CAF50; /* Green text for active state */
+    font-weight: 600;
+    border-left-color: #4CAF50; /* Green active bar */
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    padding: 30px 40px !important; /* Important for overriding potential inline styles */
+    background-color: #ffffff; /* White background for main content area */
+    border-radius: 12px; /* Rounded corners for the content area */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Shadow for content area */
+    margin-left: 20px; /* Space from sidebar */
+    margin-right: 20px; /* Space from right edge */
+    margin-bottom: 20px; /* Space from bottom */
+    flex-shrink: 0; /* Prevent content area from shrinking */
+}
+
+.dashboard-header {
+    font-size: 2.2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+/* Dashboard Card Styling (for Client and Admin DashboardOverview.jsx) */
+.dashboard-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-card {
+    background-color: white;
+    padding: 30px !important; 
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important; 
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-7px) !important; 
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25) !important;
+}
+
+/* Color accents for cards */
+.card-border-blue { border-left: 5px solid #007bff; }
+.card-border-green { border-left: 5px solid #28a745; }
+.card-border-yellow { border-left: 5px solid #ffc107; }
+.card-border-purple { border-left: 5px solid #6f42c1; }
+
+.dashboard-card h3 {
+    margin-bottom: 10px !important; 
+    font-size: 1.3em !important; 
+    line-height: 1.3;
+    font-weight: 600;
+    color: #333 !important; 
+}
+
+.dashboard-card p {
+    font-size: 2.2em !important; 
+    font-weight: bold;
+    color: #000 !important; 
+    margin-bottom: 15px !important; 
+}
+
+.dashboard-card a {
+    text-decoration: none;
+    font-weight: 700 !important; 
+    font-size: 1em !important; 
+    line-height: 1.5;
+    color: #007bff !important;  
+}
+/* Ensure link color for other accents if applicable, though typically defined by .card-border-X a */
+.dashboard-card.card-border-green a { color: #28a745 !important; }
+.dashboard-card.card-border-yellow a { color: #ffc107 !important; }
+.dashboard-card.card-border-purple a { color: #6f42c1 !important; }
+
+
+/* General table styling (Used for Admin and Client/Freelancer lists) */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table th,
+.admin-table td {
+    border: 1px solid #e0e0e0; 
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.95em;
+    vertical-align: middle;
+}
+
+.admin-table thead tr {
+    background-color: #f8f8f8; 
+}
+.admin-table th { 
+    font-weight: 600;
+    color: #555;
+}
+
+
+.admin-table tbody tr:nth-child(even) {
+    background-color: #fafafa; 
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Button styles within tables */
+.admin-table .button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+    margin-right: 5px;
+    white-space: nowrap;
+}
+
+.admin-table .button:last-child {
+    margin-right: 0;
+}
+
+.admin-table .button:hover {
+    opacity: 0.9;
+}
+
+.admin-table .button.view-btn { background-color: #3b6ea1; color: white; }
+.admin-table .button.delete-btn { background-color: #dc3545; color: white; }
+.admin-table .button.edit-btn { background-color: #ffc107; color: #333; }
+.admin-table .button.approve-btn { background-color: #28a745; color: white; }
+.admin-table .button.reject-btn { background-color: #dc3545; color: white; }
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+        padding-top: 10px;
+    }
+
+    .dashboard-sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 15px 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        border-radius: 0; /* Reset for mobile if row layout */
+    }
+
+    .sidebar-heading {
+        display: none;
+    }
+
+    .sidebar-nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .sidebar-nav-item {
+        width: auto;
+        margin-bottom: 0;
+    }
+
+    .sidebar-nav-item a {
+        padding: 8px 15px;
+        font-size: 0.9em;
+        border-left: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    .sidebar-nav-item a:hover {
+        border-left-color: transparent;
+        border-bottom-color: #4CAF50;
+    }
+
+    .sidebar-nav-item a.active {
+        border-left-color: transparent;
+        border-bottom-color: #4CAF50;
+    }
+
+    .dashboard-content {
+        margin: 15px 10px 10px 10px;
+        padding: 20px;
+    }
+
+    .dashboard-header {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+}
